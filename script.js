@@ -269,4 +269,88 @@ document.addEventListener('DOMContentLoaded', () => {
         link.download = 'orderpointe_features.csv';
         link.click();
     });
+
+    // Feature Summary Overview Functions
+    function updateFeatureSummary() {
+        const features = [];
+        const categoryHeaders = document.querySelectorAll('.feature-matrix .category-header');
+        
+        categoryHeaders.forEach(header => {
+            const category = header.textContent.trim();
+            let featureCount = 0;
+            let currentRow = header.nextElementSibling;
+            
+            while (currentRow && !currentRow.classList.contains('category-header')) {
+                if (currentRow.cells.length > 0) {
+                    featureCount++;
+                }
+                currentRow = currentRow.nextElementSibling;
+            }
+            
+            if (featureCount > 0) {
+                features.push({
+                    category: category,
+                    count: featureCount
+                });
+            }
+        });
+
+        // Update total features count
+        const totalFeatures = features.reduce((sum, feature) => sum + feature.count, 0);
+        document.getElementById('totalFeatures').textContent = totalFeatures;
+
+        // Update category distribution chart
+        const categoryChart = new Chart(document.getElementById('categoryChart'), {
+            type: 'pie',
+            data: {
+                labels: features.map(f => f.category),
+                datasets: [{
+                    data: features.map(f => f.count),
+                    backgroundColor: [
+                        '#3498db',  // Blue - Product Management
+                        '#2ecc71',  // Green - Order Management
+                        '#f1c40f',  // Yellow - Settings
+                        '#e74c3c',  // Red - Site Customizations
+                        '#9b59b6'   // Purple - Integration
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Feature Distribution',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        padding: {
+                            bottom: 20
+                        }
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            boxWidth: 12
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const percentage = ((value / totalFeatures) * 100).toFixed(1);
+                                return `${label}: ${value} features (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    updateFeatureSummary();
 });

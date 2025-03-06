@@ -423,3 +423,76 @@ body {
     background-color: #fff3cd;
     transition: background-color 0.3s ease;
 }
+
+/* Feature Summary Styles */
+.feature-summary {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-summary h2 {
+    color: #2c3e50;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.summary-card h3 {
+    color: #3498db;
+    margin-bottom: 16px;
+    font-size: 1.2em;
+}
+
+.total-features {
+    font-size: 2.5em;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.summary-card canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-summary {
+        padding: 15px;
+    }
+    
+    .summary-card canvas {
+        height: 250px !important;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .feature-summary {
+        padding: 15px;
+    }
+    
+    .summary-card canvas {
+        height: 250px !important;
+    }
+}

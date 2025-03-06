@@ -6,6 +6,7 @@
     <title>OrderPointe</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,49 +22,17 @@
         <div class="main-content">
             <div id="baseFeatureMatrix" class="feature-screen active">
                 <h1>Base Feature Matrix</h1>
-                <div class="base-features-container">
-                    <div class="feature-category">
-                        <h2>Product Management</h2>
-                        <ul>
-                            <li>Activity Tracker</li>
-                            <li>Role based access</li>
-                            <li>Orderable Monthly Limit</li>
-                            <li>Allow Back Order</li>
-                            <li>Category/Sub Category</li>
-                        </ul>
-                    </div>
-                    <div class="feature-category">
-                        <h2>Order Management</h2>
-                        <ul>
-                            <li>Updating Product Quantity</li>
-                            <li>Updating Ship method</li>
-                            <li>Order Tracking</li>
-                        </ul>
-                    </div>
-                    <div class="feature-category">
-                        <h2>Settings</h2>
-                        <ul>
-                            <li>User & Role Management</li>
-                            <li>Contact Support via Web Form</li>
-                            <li>Multi-Address Ordering</li>
-                        </ul>
-                    </div>
-                    <div class="feature-category">
-                        <h2>Site Customizations</h2>
-                        <ul>
-                            <li>Announcement & Banner</li>
-                            <li>Branding Customization</li>
-                        </ul>
-                    </div>
-                    <div class="feature-category">
-                        <h2>Integration</h2>
-                        <ul>
-                            <li>Two-factor Authentication</li>
-                            <li>SSO integrations</li>
-                            <li>Reports(Power BI)</li>
-                            <li>Product Personalization(Tiny MCE)</li>
-                            <li>Email notification(Eloqua/Send Grid)</li>
-                        </ul>
+                <div class="feature-summary">
+                    <h2>Feature Summary Overview</h2>
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <h3>Total Features</h3>
+                            <div class="total-features" id="totalFeatures">0</div>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Feature Distribution</h3>
+                            <canvas id="categoryChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
