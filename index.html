@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderPointe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>OrderPointe</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" data-feature="baseFeatureMatrix">Base Feature Matrix</a></li>
+                    <li><a href="#" data-feature="allFeatures">All Features</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div id="baseFeatureMatrix" class="feature-screen active">
+                <h1>Base Feature Matrix</h1>
+                <div class="base-features-container">
+                    <div class="feature-category">
+                        <h2>Product Management</h2>
+                        <ul>
+                            <li>Activity Tracker</li>
+                            <li>Role based access</li>
+                            <li>Orderable Monthly Limit</li>
+                            <li>Allow Back Order</li>
+                            <li>Category/Sub Category</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h2>Order Management</h2>
+                        <ul>
+                            <li>Updating Product Quantity</li>
+                            <li>Updating Ship method</li>
+                            <li>Order Tracking</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h2>Settings</h2>
+                        <ul>
+                            <li>User & Role Management</li>
+                            <li>Contact Support via Web Form</li>
+                            <li>Multi-Address Ordering</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h2>Site Customizations</h2>
+                        <ul>
+                            <li>Announcement & Banner</li>
+                            <li>Branding Customization</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h2>Integration</h2>
+                        <ul>
+                            <li>Two-factor Authentication</li>
+                            <li>SSO integrations</li>
+                            <li>Reports(Power BI)</li>
+                            <li>Product Personalization(Tiny MCE)</li>
+                            <li>Email notification(Eloqua/Send Grid)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="allFeatures" class="feature-screen">
+                <div class="dashboard-header">
+                    <h1>All Features</h1>
+                    <div class="header-actions">
+                        <div class="search-filter">
+                            <div class="search-container">
+                                <input type="text" id="featureSearch" placeholder="Search features..." autocomplete="off">
+                                <div id="searchSuggestions" class="search-suggestions"></div>
+                            </div>
+                            <select id="categoryFilter">
+                                <option value="">All Categories</option>
+                                <option value="Product Management">Product Management</option>
+                                <option value="Order Management">Order Management</option>
+                                <option value="Settings">Settings</option>
+                                <option value="Site Customizations">Site Customizations</option>
+                                <option value="Integration">Integration</option>
+                            </select>
+                            <select id="clientFilter">
+                                <option value="">All Clients</option>
+                                <option value="orderpointe">OrderPointe</option>
+                                <option value="alcon">Alcon</option>
+                                <option value="astrazeneca">AstraZeneca OBU</option>
+                                <option value="otsuka">Otsuka</option>
+                                <option value="regeneron">Regeneron</option>
+                                <option value="safeco">Safeco</option>
+                                <option value="siriusxm">SiriusXM</option>
+                                <option value="stellantis">Stellantis</option>
+                                <option value="astrazeneca-bbu">AstraZeneca BBU</option>
+                                <option value="ford">Ford</option>
+                            </select>
+                        </div>
+                        <button id="downloadReport" class="btn-primary">
+                            <i class="fas fa-download"></i> Download Report
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="feature-matrix">
+                        <thead>
+                            <tr>
+                                <th class="feature-col">Features</th>
+                                <th>OrderPointe</th>
+                                <th>Alcon</th>
+                                <th>AstraZeneca OBU</th>
+                                <th>Otsuka</th>
+                                <th>Regeneron</th>
+                                <th>Safeco</th>
+                                <th>SiriusXM</th>
+                                <th>Stellantis</th>
+                                <th>AstraZeneca BBU</th>
+                                <th>Ford</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Product Management -->
+                            <tr class="category-header">
+                                <td colspan="11">Product Management</td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Activity Tracker</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Downloadable Product</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>State level access</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Role based access</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Orderable Monthly Limit</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Allow Back Order</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Throw in Item</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Quarantine Date</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Item based checkout process</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Out of Stock customization</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>API item creation</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Category/Sub Category</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Brand based Filter</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Year based Filter</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Product Management">
+                                <td>Product Type based filter</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <!-- Order Management -->
+                            <tr class="category-header">
+                                <td colspan="11">Order Management</td>
+                            </tr>
+                            <tr data-category="Order Management">
+                                <td>Updating Product Quantity</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Order Management">
+                                <td>Updating Ship method</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Order Management">
+                                <td>Approve/Reject Order</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Order Management">
+                                <td>Order Tracking</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Order Management">
+                                <td>Shipping Charge</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <!-- Settings -->
+                            <tr class="category-header">
+                                <td colspan="11">Settings</td>
+                            </tr>
+                            <tr data-category="Settings">
+                                <td>User & Role Management</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Settings">
+                                <td>Contact Support via Web Form</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Settings">
+                                <td>Checkout & Payment Processing</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Settings">
+                                <td>Discounts/Offers</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Settings">
+                                <td>CRM Address book</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Settings">
+                                <td>Contact List Upload</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Settings">
+                                <td>Multi-Address Ordering</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <!-- Site Customizations -->
+                            <tr class="category-header">
+                                <td colspan="11">Site Customizations</td>
+                            </tr>
+                            <tr data-category="Site Customizations">
+                                <td>Announcement & Banner</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Site Customizations">
+                                <td>Branding Customization</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <!-- Integration -->
+                            <tr class="category-header">
+                                <td colspan="11">Integration</td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>Two-factor Authentication</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>SSO integrations</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>Reports(Power BI)</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>Site Monitoring(Heap)</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>Product Personalization(Tiny MCE)</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>Email notification(Eloqua/Send Grid)</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>Fulfillment(BLS)</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr data-category="Integration">
+                                <td>Payment Gateway(Stripe)</td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>x</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
